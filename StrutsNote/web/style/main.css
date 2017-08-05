@@ -1,0 +1,48 @@
+.headerleft {
+    display: inline-block;
+    width: 50%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.headerright {
+    right: 10px;
+    position: relative;
+    float: right;
+}
+
+.titlehead {
+    text-align: center;
+    padding: 5px;
+    background: #e78f08;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.col1 {
+    width: 35%;
+    display: inline-block;
+    text-align: right;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.col2 {
+    margin-left: 20%;
+    width: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+    clear: both;
+}
+
+.left_label {
+    position: absolute;
+    width: 42%;
+    text-align: right;
+}
+
+.item {
+    padding-left: 45%;
+    position: relative;
+    margin-top: 10px;
+}

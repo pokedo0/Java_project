@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--struts.multipart.maxSize 上传前判断大小-->
+    <constant name="struts.custom.i18n.resources" value="resource"></constant>
+    <constant name="struts.multipart.maxSize" value="10485760"></constant>
+    <package name="default" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor-stack name="ic">
+                <interceptor-ref name="defaultStack">
+                    <param name="fileUpload.maximumSize">10485760</param>
+                    <param name="fileUpload.allowedTypes">
+                        image/jpeg,image/gif,image/png,application/x-rar-compressed
+                    </param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <action name="i18n" class="action.I18NTestAction">
+            <result name="success">login.jsp</result>
+        </action>
+
+        <action name="deptAdd" class="action.DepartmentAction">
+            <result name="success">deptList.jsp</result>
+        </action>
+
+        <action name="money" class="action.MoneyAction">
+            <result name="success">money.jsp</result>
+        </action>
+
+        <action name="login" class="action.DoLoginAction">
+            <result name="success">success.jsp</result>
+            <result name="input">login.jsp</result>
+        </action>
+
+        <action name="test" class="action.TestAction">
+            <result name="success">test.jsp</result>
+        </action>
+
+        <action name="upload" class="action.FileUploadAction">
+            <result name="success">success.jsp</result>
+            <interceptor-ref name="ic"></interceptor-ref>
+        </action>
+
+        <action name="upload2" class="action.FileUploadAction2">
+            <result name="success">success.jsp</result>
+            <interceptor-ref name="ic"></interceptor-ref>
+        </action>
+
+        <action name="download" class="action.FileDownloadAction">
+            <result name="success" type="stream">
+                <param name="contentDisposition">
+                    inline;filename="${downloadFileName}"
+                </param>
+            </result>
+        </action>
+    </package>
+</struts>
