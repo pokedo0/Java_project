@@ -1,4 +1,4 @@
-package test.src.action;
+package action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
